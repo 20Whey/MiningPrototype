@@ -6,6 +6,8 @@ using static UnityEditor.Progress;
 public class applyMarkersAndTextures : MonoBehaviour
 {
 
+
+
     public Sprite[] sprt;
     private GameObject grdSetup;
     public List<Transform> markList;
@@ -28,8 +30,18 @@ if (Input.GetKeyDown(KeyCode.R)){
             {
             item.gameObject.AddComponent<SpriteRenderer>();
             SpriteRenderer cna = item.gameObject.GetComponent<SpriteRenderer>();
+            int tmp = Random.Range(0, sprt.Length);
             cna.sprite = sprt[Random.Range(0, sprt.Length)];
-                cna.size = new Vector2(0.25f, 0.25f);
+            cna.size = new Vector2(0.25f, 0.25f);
+
+            switch(tmp){
+            default:
+            //set hardness of object: multiplier on damage
+            //set Amount range to drop on hit
+            break;
+            }
+
+
             }
 
         }
