@@ -7,7 +7,7 @@ public class handInit : MonoBehaviour
 {
     // Start is called before the first frame update
     public ScriptableObject[] startingHand;
-    public Dictionary<int, ScriptableObject> Deck = new Dictionary<int, ScriptableObject>();
+    public Dictionary<int?, ScriptableObject> Deck = new Dictionary<int, ScriptableObject>();
     void Awake()
     {
        for(int i = 0; i < startingHand.Length; i++)
@@ -15,6 +15,27 @@ public class handInit : MonoBehaviour
             Deck.Add(i, startingHand[i]);
         }
       
+
+    }
+
+
+
+    public void groupCardsByType(Dictionary<int?, ScriptableObject> deck, int groupType)
+    {
+
+        switch(groupType)
+        {
+            default:
+
+
+                break;
+
+
+        }
+
+
+
+
 
     }
 
