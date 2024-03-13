@@ -11,21 +11,27 @@ public class handInit : MonoBehaviour
     System.Random rand = new System.Random();
     // Start is called before the first frame update
     public ScriptableObject[] startingHand;
-    public Dictionary<string, ScriptableObject> Deck = new Dictionary<string , ScriptableObject>();
+    public Dictionary<int?, ScriptableObject> Deck = new Dictionary<int? , ScriptableObject>();
     void Awake()
     {
        for(int i = 0; i < startingHand.Length; i++)
         {
-            Deck.Add(startingHand[i].name, startingHand[i]);
+            Deck.Add(i, startingHand[i]);
         }
-      
+
+           Deck = shuffleDeck(Deck);
+          KeyValuePair<int?, ScriptableObject>[] tmp = drawCards(Deck, 5);
+            for(var i = 0; i < 4; i++){
+                Debug.Log(tmp[i]);
+            }
+        
 
     }
 
 
- public static KeyValuePair<string, ScriptableObject>[] drawCards(Dictionary<string, ScriptableObject> gamer, int amount)
+ public static KeyValuePair<int?, ScriptableObject>[] drawCards(Dictionary<int?, ScriptableObject> gamer, int amount)
             {
-        KeyValuePair<string, ScriptableObject>[] drawnCards = new KeyValuePair<string, ScriptableObject>[amount];
+        KeyValuePair<int?, ScriptableObject>[] drawnCards = new KeyValuePair<int?, ScriptableObject>[amount];
         for (int i = 0; i < gamer.Count; i++)
         {
             var drawnCard = gamer.ElementAt(0);
@@ -36,7 +42,7 @@ public class handInit : MonoBehaviour
  }
 
  
-    public Dictionary<string, ScriptableObject> groupCardsByType(Dictionary<string, ScriptableObject> deck, int? groupType)
+    public Dictionary<int?, ScriptableObject> groupCardsByType(Dictionary<int?, ScriptableObject> deck, int? groupType)
     {
         switch(groupType)
         {
@@ -50,7 +56,7 @@ public class handInit : MonoBehaviour
 
 
 
-    private Dictionary<string, ScriptableObject> shuffleDeck(Dictionary<string, ScriptableObject> deck)
+    private Dictionary<int?, ScriptableObject> shuffleDeck(Dictionary<int?, ScriptableObject> deck)
     {
         deck = deck.OrderBy(x => rand.Next()).ToDictionary(item => item.Key, item => item.Value);
         return deck;
