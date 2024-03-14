@@ -6,6 +6,8 @@ public class ButtonClickHandler : MonoBehaviour, IPointerClickHandler
 {
     public GameObject spawnpoint1, spawnpoint2, spawnpoint3;
     public GameObject spawnpoint;
+    public GameObject blackness;
+
     public void OnPointerClick(PointerEventData eventData)
     {
         GameObject clickedButton = eventData.pointerPress;
@@ -31,12 +33,13 @@ public class ButtonClickHandler : MonoBehaviour, IPointerClickHandler
             if (canvas != null && canvas.CompareTag("Path1"))
             {
                 Instantiate(spawnpoint, spawnpoint1.transform.position, spawnpoint1.transform.rotation);
-
+                blackness.SetActive(false);
                 return canvas;
             }
             else if (canvas != null && canvas.CompareTag("Path2"))
             {
                 Instantiate(spawnpoint, spawnpoint2.transform.position, spawnpoint2.transform.rotation);
+                blackness.SetActive(false);
 
                 return canvas;
 
@@ -44,6 +47,7 @@ public class ButtonClickHandler : MonoBehaviour, IPointerClickHandler
             else if (canvas != null && canvas.CompareTag("Path3"))
             {
                 Instantiate(spawnpoint, spawnpoint3.transform.position, spawnpoint3.transform.rotation);
+                blackness.SetActive(false);
 
                 return canvas;
 
