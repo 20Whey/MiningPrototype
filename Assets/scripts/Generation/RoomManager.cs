@@ -11,6 +11,7 @@ public class RoomManager : MonoBehaviour
     public GameObject[] room;
     public GameObject finalRoom;
     public List<GameObject> bendyRooms = new List<GameObject>();
+    public List<GameObject> movePoints = new List<GameObject>();
     public bool hasPicked;
 
     // Start is called before the first frame update

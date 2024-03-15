@@ -7,6 +7,11 @@ public class ButtonClickHandler : MonoBehaviour, IPointerClickHandler
     public GameObject spawnpoint1, spawnpoint2, spawnpoint3;
     public GameObject spawnpoint;
     public GameObject blackness;
+    public RoomManager roomManager;
+    private void Start()
+    {
+        roomManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<RoomManager>();
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -20,7 +25,7 @@ public class ButtonClickHandler : MonoBehaviour, IPointerClickHandler
             }
             else
             {
-                Debug.LogWarning("Canvas with tag 'path1' not found in the hierarchy.");
+                Debug.LogWarning("bomba");
             }
         }
     }
@@ -34,12 +39,14 @@ public class ButtonClickHandler : MonoBehaviour, IPointerClickHandler
             {
                 Instantiate(spawnpoint, spawnpoint1.transform.position, spawnpoint1.transform.rotation);
                 blackness.SetActive(false);
+                roomManager.hasPicked = true;
                 return canvas;
             }
             else if (canvas != null && canvas.CompareTag("Path2"))
             {
                 Instantiate(spawnpoint, spawnpoint2.transform.position, spawnpoint2.transform.rotation);
                 blackness.SetActive(false);
+                roomManager.hasPicked = true;
 
                 return canvas;
 
@@ -48,6 +55,7 @@ public class ButtonClickHandler : MonoBehaviour, IPointerClickHandler
             {
                 Instantiate(spawnpoint, spawnpoint3.transform.position, spawnpoint3.transform.rotation);
                 blackness.SetActive(false);
+                roomManager.hasPicked = true;
 
                 return canvas;
 
