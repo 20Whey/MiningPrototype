@@ -6,6 +6,14 @@ using Unity.VisualScripting;
 using static UnityEngine.UI.Image;
 using UnityEngine.XR;
 
+
+
+/// <summary>
+///  needs transitioning to dictionary of <int?, GameObject>
+///  it'd be very cool if you implimented this or something like this into your code. 
+///  dictionary cuz linq is cool and lets us go straight from crafting into deck gameplay stuff. 
+///  linq is how I'll be combining pools and choosing elements
+/// </summary>
 public class handInit : MonoBehaviour
 {  
     System.Random rand = new System.Random();
