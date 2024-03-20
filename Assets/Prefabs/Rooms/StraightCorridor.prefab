@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 1890003312843254501}
   - component: {fileID: 4846609187490924390}
   - component: {fileID: 7377156718509138072}
+  - component: {fileID: 4261229380713859711}
   m_Layer: 0
   m_Name: Ore
   m_TagString: Ore
@@ -307,6 +308,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   applyMarkersAndTextures: {fileID: 0}
+--- !u!65 &4261229380713859711
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5691264741303959646}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6624646533112416179
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,6 +640,7 @@ GameObject:
   - component: {fileID: 6269578031535260927}
   - component: {fileID: 8906594688069845419}
   - component: {fileID: 4300366130998670528}
+  - component: {fileID: 6486499827137956131}
   m_Layer: 0
   m_Name: Ore (1)
   m_TagString: Ore
@@ -665,3 +688,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   applyMarkersAndTextures: {fileID: 0}
+--- !u!65 &6486499827137956131
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7530815580441042938}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
