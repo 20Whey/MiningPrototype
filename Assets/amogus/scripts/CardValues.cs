@@ -16,10 +16,9 @@ public class CardValues : MonoBehaviour
     public TMP_Text damageText;
     public TMP_Text durabilityText;
 
-    private Color[] typeColors =
+    private Sprite[] typeSprites =
     {
-        new Color(1f, 0f, 0f, 0.4f), //attack
-        new Color(1f, 0.92f, 0.016f, 0.4f), //mining
+        
     };
     void Start()
     {
@@ -28,7 +27,7 @@ public class CardValues : MonoBehaviour
 
     public void UpdateCard()
 	{
-        cardType.color = typeColors[(int)cardData.cardType[0]];
+        cardImage.sprite = typeSprites[(int)cardData.cardType[0]];
 
         nameText.text = cardData.cardName;
         damageText.text = $"deal {cardData.damage} damage";
